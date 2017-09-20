@@ -1,0 +1,20 @@
+.user-info img {
+  float: left;
+  margin: 0 20px 20px 0;
+  max-height: 200px;
+
+  .username {
+    font-family: 'Helvetica';
+    font-size: 18px;
+
+    a {
+      font-family: 'Helvetica';
+      font-size: 18px;
+      text-decoration: none;
+    }
+  }
+
+  li {
+    padding: 5px;
+  }
+}

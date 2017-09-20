@@ -1,0 +1,19 @@
+.repos,
+.starred {
+  float: left;
+  width: 100%;
+
+  li {
+    padding: 10px 0;
+
+    &+li {
+      border-top: 1px solid #ccc;
+    }
+
+  }
+}
+
+// .repos li + li,
+// .starred li + li {
+//   border-top: 1px solid #ccc;
+// }
