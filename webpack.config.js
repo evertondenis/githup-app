@@ -7,19 +7,19 @@ const DashboardPlugin = require('webpack-dashboard/plugin')
 const HtmlPlugin = require('html-webpack-plugin')
 
 module.exports = {
-	devtool: 'source-map',
+  devtool: 'source-map',
 
-	entry: [
-		'react-hot-loader/patch',
-		'webpack-dev-server/client?http://localhost:3000',
-		'webpack/hot/only-dev-server',
-		path.join(__dirname, 'src', 'index')
-	],
+  entry: [
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
+    path.join(__dirname, 'src', 'index')
+  ],
 
-	output: {
-		path: path.join(__dirname, 'dist'),
-		filename: '[name]-[hash].js',
-		publicPath: ''
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: '[name]-[hash].js',
+    publicPath: ''
   },
 
   resolve: {
@@ -30,27 +30,27 @@ module.exports = {
     extensions: ['.jsx', '.js']
   },
 
-	module: {
-		rules: [
-			{
-				enforce: 'pre',
-				test: /\.js(x)?$/,
-				include: /src/,
+  module: {
+    rules: [
+      {
+        enforce: 'pre',
+        test: /\.js(x)?$/,
+        include: /src/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: 'babel-loader'
       },
-			{
-				test: /\.(s)?css$/,
-				use: [
+      {
+        test: /\.(s)?css$/,
+        use: [
 					{loader: 'style-loader'},
 					{loader: 'css-loader'},
 					{loader: 'sass-loader'}
-				]
-			}
-		]
-	},
+        ]
+      }
+    ]
+  },
 
-	plugins: [
+  plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new DashboardPlugin(),
     new ExtractTextPlugin('./src/scss/main.scss'),
@@ -58,9 +58,9 @@ module.exports = {
       title: 'Github APP',
       template: path.join(__dirname, 'src', 'html', 'template.html')
     })
-	],
+  ],
 
-	resolveLoader: {
-    moduleExtensions: ["-loader"]
-	}
+  resolveLoader: {
+    moduleExtensions: ['-loader']
+  }
 }
