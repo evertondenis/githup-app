@@ -26,7 +26,7 @@ module.exports = {
     }),
 
     new webpack.optimize.UglifyJsPlugin({
-      compress: { warnings: false}
+      compress: { warnings: false }
     }),
 
     new webpack.optimize.DedupePlugin(),
